@@ -11,8 +11,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     div.container-fluid
+      = render partial: 'common/logo'
+
       div.row.content
         = render partial: 'common/header'
-        
+
         div.col-sm-9
           = yield

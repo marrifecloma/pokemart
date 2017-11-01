@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'products/show_all'
+  get '/products', to: 'products#show_all', as: 'show_all'
 
   get 'products/show'
 
