@@ -7,4 +7,4 @@ h1 Products
         = image_tag product.image_name
         p = product.name
 
-= will_paginate @posts
+= will_paginate @post, renderer: BootstrapPagination::Rails
