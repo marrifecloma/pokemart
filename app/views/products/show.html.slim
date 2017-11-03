@@ -1,4 +1,22 @@
-doctype html
-html
-  body
-    h1 Show
+
+h1 = @product.name
+
+= image_tag(@product.image_name, :class => 'float-left')
+
+div.productInfo
+  h4 Description:
+  = @product.description
+  br
+  h4 Price:
+  = image_tag 'pokedollar'
+  = number_with_precision @product.price, :precision => 2
+  br
+  h4 Stock Left:
+  = @product.stock_quantity
+  br
+  h4 Category:
+  = @product.category.name
+  br
+  h4 Add to Cart
+
+= link_to 'Back', show_all_path

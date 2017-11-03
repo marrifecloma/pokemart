@@ -5,6 +5,9 @@ h1 Products
     - group.each do |product|
       div.col-sm-4
         = image_tag product.image_name
-        p = product.name
+        p
+          = product.name
+          br
+          = link_to 'Details', product_path(product)
 
-= will_paginate @post, renderer: BootstrapPagination::Rails
+= will_paginate @collection, :class => 'pagination', renderer: BootstrapPagination::Rails
