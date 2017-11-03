@@ -7,10 +7,6 @@ permit_params :name,
               :category_id,
               datacenters_attributes: [:image_name, :_destroy]
 
-def remove_image_name
-  puts "Clicked"
-end
-
 form do |f|
 
     def remove_image_name
@@ -33,7 +29,7 @@ form do |f|
       else
         input :image_name, :as => :file
       end
-      
+
       input :image_name_cache, :as => :hidden
       input :remove_image_name, :as => :boolean, :label => 'Remove', method: :remove_image_name
     end

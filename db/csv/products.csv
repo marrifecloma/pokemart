@@ -1,0 +1,62 @@
+name,description,price,stock_quantity,image_name,category_name
+Antidote,A spray-type medicine. It lifts the effect of poison from one Pokémon.,100,100,antidote.png,Healing Items
+Parlyz Heal,A spray-type medicine for paralysis. It can be used once to free a Pokemon that has been paralyzed.,200,100,parlyz_heal.png,Healing Items
+Burn Heal,A spray-type medicine for treating burns. It can be used once to heal a Pokémon suffering from a burn.,250,100,burn_heal.png,Healing Items
+Potion,A spray-type medicine for treating wounds. It can be used to restore 20 HP to an injured Pokémon.,300,100,potion.png,Healing Items
+Super Potion,A spray-type medicine for treating wounds. It can be used to restore 50 HP to an injured Pokémon.,700,100,super_potion.png,Healing Items
+Max Potion,A spray-type medicine for treating wounds. It will completely restore the max HP of a single Pokémon.,2500,100,max_potion.png,Healing Items
+Hyper Potion,A spray-type medicine for treating wounds. It can be used to restore 200 HP to an injured Pokémon.,1200,100,hyper_potion.png,Healing Items
+Full Restore,A medicine that can be used to fully restore the HP of a single Pokémon and heal any status conditions it has.,3000,100,full_restore.png,Healing Items
+Awakening,A spray-type medicine used against sleep. It can be used once to rouse a Pokémon from the clutches of sleep.,200,100,awakening.png,Healing Items
+Revive,A medicine that can revive fainted Pokémon. It also restores half of a fainted Pokémon maximum HP.,1500,100,revive.png,Healing Items
+Ice Heal,A spray-type medicine for freezing. It can be used once to defrost a Pokémon that has been frozen solid.,250,100,ice_heal.png,Healing Items
+Full Heal,A spray-type medicine that is broadly effective. It can be used once to heal all the status conditions of a Pokémon.,600,100,full_heal.png,Healing Items
+Pokeball,"A device for catching wild Pokémon. It is thrown like a ball at a Pokémon, comfortably encapsulating its target.",200,100,pokeball.png,Pokeballs
+Great Ball,"A good, high-performance Poké Ball that provides a higher Pokémon catch rate than a standard Poké Ball.",600,100,great_ball.png,Pokeballs
+Ultra Ball,An ultra-high-performance Poké Ball that provides a higher success rate for catching Pokémon than a Great Ball.,1200,100,ultra_ball.png,Pokeballs
+Premier Ball,A somewhat rare Poké Ball that was made as a commemorative item used to celebrate an event of some sort.,200,100,premier_ball.png,Pokeballs
+Repeat Ball,A somewhat different Poké Ball that works especially well on a Pokémon species that has been caught before.,1000,100,repeat_ball.png,Pokeballs
+Timer Ball,A somewhat different Poké Ball that becomes progressively more effective the more turns that are taken in battle.,1000,100,timer_ball.png,Pokeballs
+Nest Ball,A somewhat different Poké Ball that becomes more effective the lower the level of the wild Pokémon.,1000,100,nest_ball.png,Pokeballs
+Net Ball,A somewhat different Poké Ball that is more effective when attempting to catch Water- or Bug-type Pokémon.,1000,100,net_ball.png,Pokeballs
+Dive Ball,A somewhat different Poké Ball that works especially well when catching Pokémon that live underwater.,1000,100,dive_ball.png,Pokeballs
+Luxury Ball,A particularly comfortable Poké Ball that makes a wild Pokémon quickly grow friendlier after being caught.,1000,100,luxury_ball.png,Pokeballs
+Heal Ball,A remedial Poké Ball that restores the HP of a Pokémon caught with it and eliminates any status conditions.,300,100,heal_ball.png,Pokeballs
+Quick Ball,A somewhat different Poké Ball that has a more successful catch rate if used at the start of a wild encounter.,1000,100,quick_ball.png,Pokeballs
+Dusk Ball,A somewhat different Poké Ball that makes it easier to catch wild Pokémon at night or in dark places like caves.,1000,100,dusk_ball.png,Pokeballs
+Fire Stone,A peculiar stone that can make certain species of Pokémon evolve. The stone has a fiery orange heart.,2100,50,fire_stone.png,Evolution Items
+Water Stone,A peculiar stone that can make certain species of Pokémon evolve. It is the blue of a pool of clear water.,2100,50,water_stone.png,Evolution Items
+Thunder Stone,A peculiar stone that can make certain species of Pokémon evolve. It has a distinct thunderbolt pattern.,2100,50,thunder_stone.png,Evolution Items
+Leaf Stone,A peculiar stone that can make certain species of Pokémon evolve. It has an unmistakable leaf pattern.,2100,50,leaf_stone.png,Evolution Items
+Moon Stone,A peculiar stone that can make certain species of Pokémon evolve. It is as black as the night sky.,5000,50,moon_stone.png,Evolution Items
+Sun Stone,A peculiar stone that can make certain species of Pokémon evolve. It burns as red as the evening sun.,5000,50,sun_stone.png,Evolution Items
+Shiny Stone,A peculiar stone that can make certain species of Pokémon evolve. It shines with a dazzling light.,5000,50,shiny_stone.png,Evolution Items
+Dusk Stone,A peculiar stone that can make certain species of Pokémon evolve. It holds shadows as dark as can be.,5000,50,dusk_stone.png,Evolution Items
+Dawn Stone,A peculiar stone that can make certain species of Pokémon evolve. It sparkles like a glittering eye.,5000,50,dawn_stone.png,Evolution Items
+TM 32  - Double Team,"By moving rapidly, the user makes illusory copies of itself to raise its evasiveness.",1000,50,,TMs
+TM 33 - Reflect,A wondrous wall of light is put up to reduce damage from physical attacks for five turns.,1000,50,,TMs
+TM 02 -  Razor Wind,"In this two-turn attack, blades of wind hit opposing Pokémon on the second turn. Critical hits land more easily.",2000,50,,TMs
+TM 07 - Horn Drill,The user stabs the target with a horn that rotates like a drill. The target faints instantly if this attack hits.,2000,50,,TMs
+TM 37 - Egg Bomb,A large egg is hurled at the target with maximum force to inflict damage.,2000,50,,TMs
+TM 01 - Mega Punch,The target is slugged by a punch thrown with muscle-packed power.,3000,50,,TMs
+TM 05 - Mega Kick,The target is attacked by a kick launched with muscle-packed power.,3000,50,,TMs
+TM 09 - Take Down,"A reckless, full-body charge attack for slamming into the target. This also damages the user a little.",3000,50,,TMs
+TM 17 - Submission,The user grabs the target and recklessly dives for the ground. This also damages the user a little.,3000,50,,TMs
+HP Up,"A nutritious drink for Pokémon. When consumed, it raises the base HP of a single Pokémon.",9800,20,hp_up.png,Competitive
+Protein,"A nutritious drink for Pokémon. When consumed, it raises the base Attack stat of a single Pokémon.",9800,20,protein.png,Competitive
+Iron,"A nutritious drink for Pokémon. When consumed, it raises the base Defense stat of a single Pokémon.",9800,20,iron.png,Competitive
+Carbos,"A nutritious drink for Pokémon. When consumed, it raises the base Speed stat of a single Pokémon.",9800,20,carbos.png,Competitive
+Calcium,"A nutritious drink for Pokémon. When consumed, it raises the base Sp. Atk stat of a single Pokémon.",9800,20,calcium.png,Competitive
+X Accuracy,An item that sharply boosts the accuracy of a Pokémon during a battle. It wears off once the Pokémon is withdrawn.,950,100,x_accuracy.png,Competitive
+Guard Spec,An item that prevents stat reduction among the Trainer's party Pokémon for five turns after it is used in battle.,700,100,guard_spec.png,Competitive
+Dire Hit,An item that raises the critical-hit ratio greatly. It can be used only once and wears off if the Pokémon is withdrawn.,650,100,dire_hit.png,Competitive
+X Attack,An item that sharply boosts the Attack stat of a Pokémon during a battle. It wears off once the Pokémon is withdrawn.,500,100,x_attack.png,Competitive
+X Defend,An item that sharply boosts the Defense stat of a Pokémon during a battle. It wears off once the Pokémon is withdrawn.,550,100,x_defend.png,Competitive
+X Speed,An item that sharply boosts the Speed stat of a Pokémon during a battle. It wears off once the Pokémon is withdrawn.,350,100,x_speed.png,Competitive
+X Special Defense,An item that sharply boosts the Sp. Def stat of a Pokémon during a battle. It wears off once the Pokémon is withdrawn.,350,100,x_special_defense.png,Competitive
+X Special Attack,An item that sharply boosts the Sp. Atk stat of a Pokémon during a battle. It wears off once the Pokémon is withdrawn.,350,100,x_speical_attack.png,Competitive
+Escape Rope,A long and durable rope. Use it to escape instantly from a cave or a dungeon.,550,100,escape_rope.png,Special Items
+Repel,An item that prevents any low-level wild Pokémon from jumping out at you for a while.,350,100,repel.png,Special Items
+Super Repel,An item that prevents any low-level wild Pokémon from jumping out at you for a while. It lasts longer than Repel.,500,100,super_repel.png,Special Items
+Max Repel,An item that prevents any low-level wild Pokémon from jumping out at you for a while. It lasts longer than Super Repel.,700,100,max_repel.png,Special Items
+Poke Doll,A doll that attracts the attention of a Pokémon. It guarantees escape from any battle with wild Pokémon.,1000,100,poke_doll.png,Special Items
