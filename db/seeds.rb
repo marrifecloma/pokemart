@@ -13,7 +13,7 @@ CSVFiles = ['categories', 'products']
 CSVFiles.each do |csv|
   CSV.foreach('db/csv/' + csv + '.csv', { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all}) do |row|
     if csv == 'categories'
-      Category.create(row.to_hash)
+      Category.create!(row.to_hash)
     elsif csv == 'products'
       productInfo = row.to_hash
 
@@ -23,7 +23,7 @@ CSVFiles.each do |csv|
                               :description =>productInfo[:description],
                               :price => productInfo[:price].to_f,
                               :stock_quantity => productInfo[:stock_quantity].to_i,
-                              :image_name => productInfo[:image_name]).save
+                              :image_name => productInfo[:image_name]).save!
     end
   end
 end

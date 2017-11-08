@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'products#show_all'
+  
   get '/products', to: 'products#show_all', as: 'show_all'
 
   get 'products/:id', to: 'products#show', as: 'product', id: /\d+/
