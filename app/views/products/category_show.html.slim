@@ -1,0 +1,7 @@
+h1 = @category_name
+
+= render 'common/searchBar', :local => { :path => category_products_path(@category_name) }
+
+= render 'showProducts', collection: @products
+
+= will_paginate @collection, :class => 'pagination', renderer: BootstrapPagination::Rails

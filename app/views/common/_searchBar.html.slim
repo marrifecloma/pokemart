@@ -1,0 +1,4 @@
+div.searchBar
+  = form_tag(local[:path], method: :get) do
+    = text_field_tag :search_term, params[:search_term]
+    = submit_tag 'Search', name: nil

@@ -1,13 +1,7 @@
 h1 Products
 
-- @products.in_groups_of(3, false).each do |group|
-  div.row
-    - group.each do |product|
-      div.col-sm-4
-        = image_tag product.image_name
-        p
-          = product.name
-          br
-          = link_to 'Details', product_path(product)
+= render 'common/searchBar', local: { path: show_all_path }
 
-= will_paginate @collection, :class => 'pagination', renderer: BootstrapPagination::Rails
+= render 'showProducts', collection: @products || 'No products'
+
+= will_paginate @collection, class: 'pagination', renderer: BootstrapPagination::Rails

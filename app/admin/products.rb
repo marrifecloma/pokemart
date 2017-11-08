@@ -11,8 +11,6 @@ form do |f|
 
     def remove_image_name
       product = Product.find_by_id(params[:product_id])
-
-
     end
 
   inputs do

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'products/:id', to: 'products#show', as: 'product', id: /\d+/
 
+  get 'products/:name', to: 'products#category_show', as: 'category_products'
+
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
