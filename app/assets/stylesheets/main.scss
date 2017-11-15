@@ -1,3 +1,27 @@
+.navbar-default {
+  // background: rgba(238, 238, 238, .5);
+
+  .navbar-header {
+    img {
+      width: 100px;
+      height: 40px;
+      margin: auto;
+    }
+  }
+
+  .container-fluid {
+    .container {
+      margin: auto;
+    }
+  }
+
+  .navbar-right {
+    span {
+      margin-right: 5px;
+    }
+  }
+}
+
 .item {
   display: inline-block;
 }

@@ -1,0 +1,35 @@
+nav.navbar.navbar-default.navbar-fixed-top.collaspe.navbar-collapse
+  div.container-fluid
+    div.navbar-header
+      button.navbar-toggle type='button' data-toggle='collapse' data-target='#customerNavbar'
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to image_tag('logo.png', :class => 'img-fluid'), root_path
+
+    div.collapse.navbar-collapse id='customerNavbar'
+      ul.nav.navbar-nav
+        li.dropdown
+          a.dropdown-toggle data-toggle='dropdown' href='#'
+            'Products
+            span.caret
+            ul.dropdown-menu
+              li
+                a href='/products' All Products
+                - Category.all.each do |category|
+                  li
+                    = link_to category.name, category_products_path(category.name)
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href='#'
+            span.glyphicon.glyphicon-shopping-cart
+            'Cart
+          li
+            a href='#'
+              span.glyphicon.glyphicon-user
+              'Sign Up
+          li
+            a href='#'
+              span.glyphicon.glyphicon-log-in
+              'Log In
