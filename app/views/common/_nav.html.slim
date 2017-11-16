@@ -22,9 +22,15 @@ nav.navbar.navbar-default.navbar-fixed-top.collaspe.navbar-collapse
 
       ul.nav.navbar-nav.navbar-right
         li
-          a href='#'
+          = link_to show_cart_path
             span.glyphicon.glyphicon-shopping-cart
-            'Cart
+            'Cart (
+            - if session[:cart_id]
+              = Cart.find(session[:cart_id]).cart_items.sum(:quantity)
+            - else
+              | 0
+            ')
+            show_cart_path
           li
             a href='#'
               span.glyphicon.glyphicon-user

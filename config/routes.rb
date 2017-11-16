@@ -7,6 +7,14 @@ Rails.application.routes.draw do
 
   get 'products/:name', to: 'products#category_show', as: 'category_products'
 
+  get '/cart', to: 'carts#show', as: 'show_cart'
+
+  post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
+
+  resources :carts
+  resources :products
+  resources :cart_items
+
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,9 +1,8 @@
 .navbar-default {
-  // background: rgba(238, 238, 238, .5);
 
   .navbar-header {
     img {
-      width: 100px;
+      width: 120px;
       height: 40px;
       margin: auto;
     }
@@ -52,4 +51,14 @@ nav.pagination {
   #search_term {
     margin-right: 10px;
   }
+}
+
+.container.text-center {
+  .img-responsive {
+    margin: auto;
+  }
+}
+
+#grandTotal {
+  text-align: right;
 }
