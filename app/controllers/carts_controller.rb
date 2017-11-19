@@ -24,6 +24,20 @@ class CartsController < ApplicationController
     redirect_to show_cart_path
   end
 
+  def delete_from_cart
+    CartItem.where(product_id: params[:product_id], cart_id: session[:cart_id]).first.destroy
+
+    redirect_to show_cart_path
+  end
+
+  def update_cart_item
+    current_cart_item = CartItem.where(product_id: params[:product_id], cart_id: session[:cart_id]).first
+
+    current_cart_item.update_columns(quantity: params[:quantity])
+
+    redirect_to show_cart_path
+  end
+
   private
   def current_cart
     @current_cart = Cart.find(session[:cart_id])

@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
 
+  post '/delete_from_cart/:product_id' => 'carts#delete_from_cart', :as => 'delete_from_cart'
+
+  match '/show', to: 'carts#update_cart_item', via: 'post'
+
   resources :carts
   resources :products
   resources :cart_items

@@ -7,7 +7,11 @@
           - @current_cart.each do |row|
             tr
               td = row.product.name
-              td = row.quantity
+              td
+                = form_tag({controller: 'carts', action: 'update_cart_item'}, method: 'post')
+                  = number_field_tag 'quantity', row.quantity, min: 1
+                  = hidden_field_tag 'product_id', row.product.id
+                  = submit_tag 'Update'
               td
                 = image_tag 'pokedollar'
                 =< number_with_precision row.product.price, :precision => 2
@@ -15,7 +19,8 @@
                 = image_tag 'pokedollar'
                 =< number_with_precision (row.quantity) * row.product.price, :precision => 2
                 - total += (row.quantity) * row.product.price
-              td Edit | Delete
+              td
+                =< link_to 'Delete', delete_from_cart_path(row.product.id), method: :post, data: {confirm: 'Remove from cart?'}
         tr
           td#grandTotal colspan=5
             b Total:
