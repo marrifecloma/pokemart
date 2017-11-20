@@ -1,68 +1,95 @@
-.navbar-default {
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 
-  .navbar-header {
-    img {
-      width: 120px;
-      height: 40px;
-      margin: auto;
+  main {
+    flex: 1;
+  }
+
+  .jumbotron {
+    background: linear-gradient(to bottom, rgba(226,226,226,1),  rgba(254,254,254,1));
+    margin-top: 50px;
+
+    h2 {
+      font: 400 32px/1.3 'Lobster Two', Helvetica, sans-serif;
+      text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+      letter-spacing: 3px;
     }
   }
 
-  .container-fluid {
-    .container {
-      margin: auto;
+  .navbar-default {
+
+    .navbar-header {
+      img {
+        width: 120px;
+        height: 40px;
+        margin: auto;
+      }
+    }
+
+    .container-fluid {
+      .container {
+        margin: auto;
+      }
+    }
+
+    .navbar-right {
+      span {
+        margin-right: 5px;
+      }
     }
   }
 
-  .navbar-right {
-    span {
-      margin-right: 5px;
-    }
-  }
-}
-
-.item {
-  display: inline-block;
-}
-
-nav.pagination {
-  margin-top: 10px;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  min-width: 100%;
-  width: 100%;
-}
-
-.float-left {
-  margin-right: 20px;
-}
-
-.productInfo {
-  h4 {
-    margin-bottom: 0px;
+  .item {
     display: inline-block;
   }
-}
 
-.searchBar {
-  margin-bottom: 50px;
-
-  #search_term {
-    margin-right: 10px;
+  nav.pagination {
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
   }
-}
 
-.container.text-center {
-  .img-responsive {
-    margin: auto;
+  .float-left {
+    margin-right: 20px;
   }
-}
 
-#grandTotal {
-  text-align: right;
-}
+  .productInfo {
+    h4 {
+      margin-bottom: 0px;
+      display: inline-block;
+    }
+  }
 
-input#quantity {
-  width: 50px;
+  .searchBar {
+    margin-bottom: 50px;
+
+    #search_term {
+      margin-right: 10px;
+    }
+  }
+
+  .container.text-center {
+    .img-responsive {
+      margin: auto;
+    }
+  }
+
+  #grandTotal {
+    text-align: right;
+  }
+
+  input#quantity {
+    width: 50px;
+  }
+
+  footer {
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgba(198, 198, 198, 1);
+  }
 }

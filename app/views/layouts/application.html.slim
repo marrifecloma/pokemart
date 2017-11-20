@@ -10,6 +10,7 @@ html
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'
 
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -17,7 +18,7 @@ html
   body
     = render partial: 'common/nav'
 
-    div.container-fluid id='main'
+    main.container-fluid
       = render partial: 'common/logo'
 
       div.container
@@ -27,3 +28,5 @@ html
         = notice
       p.alert
         = alert
+
+    = render partial: 'common/footer'
