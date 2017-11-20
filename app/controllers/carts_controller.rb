@@ -21,7 +21,7 @@ class CartsController < ApplicationController
       cart_item.save
     end
 
-    redirect_to show_cart_path
+    redirect_to request.env["HTTP_REFERER"]
   end
 
   def delete_from_cart
@@ -35,7 +35,7 @@ class CartsController < ApplicationController
 
     current_cart_item.update_columns(quantity: params[:quantity])
 
-    redirect_to show_cart_path
+    redirect_to request.env["HTTP_REFERER"]
   end
 
   private
