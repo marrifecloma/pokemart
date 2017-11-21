@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'pages#page', as: 'contact'
 
+  match '/cart/checkout', to: 'customers#customer_info', via: 'post'
+
   resources :carts
   resources :products
   resources :cart_items

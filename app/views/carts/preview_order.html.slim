@@ -2,5 +2,19 @@ h1 Checkout
 
 h2 Customer Information
 
-= form_tag({controller: 'customers', action: 'customer_info'}, method: 'post')
-  = 
+= form_tag({controller: 'customers', action: 'customer_info'}, method: 'post', id: 'customer_info')
+  p
+    => label_tag 'full_name', 'Full Name: '
+    =< text_field_tag 'full_name'
+
+  p
+    => label_tag 'address', 'Address: '
+    =< text_field_tag 'address'
+
+  p
+    => label_tag 'city', 'City: '
+    =< text_field_tag 'city'
+
+  p
+    => label_tag 'province', 'Province: '
+    =< collection_select(:post, :province, Province.all, :id, :name, prompt: true)
