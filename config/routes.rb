@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+
   root to: 'products#show_all', as: 'root'
 
   get '/products', to: 'products#show_all', as: 'show_all'
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
   post '/delete_from_cart/:product_id' => 'carts#delete_from_cart', :as => 'delete_from_cart'
 
   match '/show', to: 'carts#update_cart_item', via: 'post'
+
+  get '/about', to: 'pages#page', as: 'about'
+
+  get '/contact', to: 'pages#page', as: 'contact'
 
   resources :carts
   resources :products

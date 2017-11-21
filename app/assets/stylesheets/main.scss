@@ -91,5 +91,10 @@ body {
     margin-bottom: 10px;
     text-align: center;
     color: rgba(198, 198, 198, 1);
+    
+    a, a:link, a:visited {
+      color: rgba(198, 198, 198, 1);
+      text-decoration: none;
+    }
   }
 }
