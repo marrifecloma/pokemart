@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'carts#show', as: 'show_cart'
 
+  get '/cart/checkout', to: 'carts#preview_order', as: 'preview_order'
+
   post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
 
   post '/delete_from_cart/:product_id' => 'carts#delete_from_cart', :as => 'delete_from_cart'

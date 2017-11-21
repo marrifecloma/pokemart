@@ -38,6 +38,10 @@ class CartsController < ApplicationController
     redirect_to request.env["HTTP_REFERER"]
   end
 
+  def preview_order
+    @current_cart = Cart.find(session[:cart_id])
+  end
+
   private
   def current_cart
     @current_cart = Cart.find(session[:cart_id])

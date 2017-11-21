@@ -26,6 +26,8 @@
             b Total:
             = image_tag 'pokedollar'
             =< number_with_precision total, :precision => 2
+
+    = link_to 'Checkout', preview_order_path
   - else
 
     h2 No Items in Cart

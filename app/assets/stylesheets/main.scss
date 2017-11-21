@@ -87,11 +87,25 @@ body {
     width: 50px;
   }
 
+  #cart_item {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    img {
+      float: left;
+      margin-right: 10px;
+    }
+
+    p {
+      float: left;
+    }
+  }
+
   footer {
     margin-bottom: 10px;
     text-align: center;
     color: rgba(198, 198, 198, 1);
-    
+
     a, a:link, a:visited {
       color: rgba(198, 198, 198, 1);
       text-decoration: none;
