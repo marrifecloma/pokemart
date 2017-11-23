@@ -1,1 +1,12 @@
-= debug @charge
+h1
+  | Thank You
+  =< @order.customer.full_name
+
+p
+  | Your order number is
+  =< @order.id
+  | . If you have any questions, contact us at:
+  =< mail_to 'customer_service@pokemart.com', 'customer_service@pokemart.com'
+
+p
+  = link_to 'Home', root_path

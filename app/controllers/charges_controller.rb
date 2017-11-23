@@ -20,14 +20,15 @@ class ChargesController < ApplicationController
     )
 
   if @charge.paid && (amount.to_f * 100).to_i == @charge.amount
-    order = Order.create(status: 'paid', total: amount, stripe_id: @charge.id)
+    @order = Order.create(status_id: 1, total: amount, stripe_id: @charge.id, customer_id: session[:customer])
 
     cart_items.each do |item|
-      order.order_products.build(quantity: item.quantity, price: item.product.price, product_id: item.product.id).save
+      @order.order_products.build(quantity: item.quantity, price: item.product.price, product_id: item.product.id).save
     end
 
     session.delete(:cart_id)
     session.delete(:amount)
+    session.delete(:customer)
   end
 
 

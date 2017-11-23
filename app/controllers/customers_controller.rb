@@ -5,6 +5,8 @@ class CustomersController < ApplicationController
                                 city: params[:city],
                                 region_id: params[:region][:region_id]).first_or_create!
 
+    session[:customer] = @customer_info.id
+
     @tax = getTax @customer_info.region
 
     @cart_items = Cart.find(session[:cart_id]).cart_items
