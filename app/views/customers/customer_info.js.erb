@@ -1,0 +1,3 @@
+$('#customer_info').html('<div id = "customer_address"><b><%= @customer_info.full_name %></b><br /><%= @customer_info.address %><br /><%= @customer_info.city %>, <%= @customer_info.region.name %></div>');
+
+$('.payment').html('<%= j render "order_summary", customer: @customer_info, cart: @cart_items, tax: @tax %>');

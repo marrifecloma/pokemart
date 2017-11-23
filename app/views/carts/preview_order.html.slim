@@ -1,20 +1,24 @@
 h1 Checkout
 
 h2 Customer Information
+div.customer_info
+  = form_tag({controller: 'customers', action: 'customer_info'}, method: 'post', id: 'customer_info', remote: true)
+    p
+      => label_tag 'full_name', 'Full Name: '
+      =< text_field_tag 'full_name', nil, :required => true
 
-= form_tag({controller: 'customers', action: 'customer_info'}, method: 'post', id: 'customer_info')
-  p
-    => label_tag 'full_name', 'Full Name: '
-    =< text_field_tag 'full_name'
+    p
+      => label_tag 'address', 'Address: '
+      =< text_field_tag 'address'
 
-  p
-    => label_tag 'address', 'Address: '
-    =< text_field_tag 'address'
+    p
+      => label_tag 'city', 'City: '
+      =< text_field_tag 'city'
 
-  p
-    => label_tag 'city', 'City: '
-    =< text_field_tag 'city'
+    p
+      => label_tag 'region', 'Region: '
+      =< collection_select(:region, :region_id, Region.all, :id, :name, prompt: true)
+    p
+      = submit_tag 'Save & Continue', :id => 'save_customer'
 
-  p
-    => label_tag 'province', 'Province: '
-    =< collection_select(:post, :province, Province.all, :id, :name, prompt: true)
+div.payment

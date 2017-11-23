@@ -8,8 +8,7 @@ div.productInfo
   = @product.description
   br
   h4 Price:
-  = image_tag 'pokedollar'
-  = number_with_precision @product.price, :precision => 2
+  =< render 'common/money', number: @product.price
   br
   h4 Stock Left:
   = @product.stock_quantity

@@ -1,0 +1,37 @@
+div.order_summary
+  h2 Order Summary / Payment
+
+  div.invoice
+    div.table-responsive
+      table.table#invoice
+        thead
+          tr
+            th scope='col' Name
+            th scope='col' Quantity
+            th scope='col' Unit Price
+            th scope='col' Total
+        tbody
+        - subtotal = 0
+        - cart.each do |item|
+          - item_total = (item.product.price * item.quantity)
+          - subtotal += item_total
+          tr
+            td
+              = item.product.name
+            td
+              = item.quantity
+            td
+              = render 'common/money', number: item.product.price
+            td
+              = render 'common/money', number: item_total
+        tr
+          td colspan='3'
+          td#totals
+            b SubTotal:
+            =< render 'common/money', number: subtotal
+            br
+            b Taxes:
+            =< render 'common/money', number: (subtotal * tax)
+            br
+            b Amount:
+            =< render 'common/money', number: ((subtotal) + (subtotal * tax))
