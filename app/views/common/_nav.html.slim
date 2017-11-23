@@ -22,7 +22,7 @@ nav.navbar.navbar-default.navbar-fixed-top.collaspe.navbar-collapse
 
       ul.nav.navbar-nav.navbar-right
         li
-          = link_to show_cart_path
+          = link_to show_cart_path, class: 'shopping-cart'
             span.glyphicon.glyphicon-shopping-cart
             'Cart (
             - if session[:cart_id]
