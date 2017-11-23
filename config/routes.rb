@@ -22,9 +22,7 @@ Rails.application.routes.draw do
 
   match '/cart/checkout', to: 'customers#customer_info', via: 'post'
 
-  resources :carts
-  resources :products
-  resources :cart_items
+  resources :charges, only: [:new, :create]
 
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config

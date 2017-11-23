@@ -8,6 +8,9 @@ class CustomersController < ApplicationController
     @tax = getTax @customer_info.region
 
     @cart_items = Cart.find(session[:cart_id]).cart_items
+
+    @description = 'Pokemart'
+    @key = Rails.configuration.stripe[:publishable_key]
   end
 
   private

@@ -34,4 +34,22 @@ div.order_summary
             =< render 'common/money', number: (subtotal * tax)
             br
             b Amount:
-            =< render 'common/money', number: ((subtotal) + (subtotal * tax))
+            - amount = ((subtotal) + (subtotal * tax))
+            =< render 'common/money', number: amount
+
+  = form_tag charges_path do
+    article
+      - if flash[:error].present?
+        #error_explanation
+          p= flash[:error]
+      label.amount
+        span
+          | Amount:
+          = render 'common/money', number: amount
+
+    script.stripe-button{
+                          data-amount="#{(amount * 100)}"
+                          data-description="#{@description}"
+                          data-key="#{@key}"
+                          data-locale="auto"
+                          src="https://checkout.stripe.com/checkout.js" }
