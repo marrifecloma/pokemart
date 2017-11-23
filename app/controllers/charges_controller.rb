@@ -24,6 +24,10 @@ class ChargesController < ApplicationController
 
     cart_items.each do |item|
       @order.order_products.build(quantity: item.quantity, price: item.product.price, product_id: item.product.id).save
+
+      product = Product.find(item.product.id)
+      product.stock_quantity = product.stock_quantity - item.quantity
+      product.save
     end
 
     session.delete(:cart_id)
