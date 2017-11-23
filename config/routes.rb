@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+
+  get 'charges/create'
+
   get 'pages/about'
 
   root to: 'products#show_all', as: 'root'
