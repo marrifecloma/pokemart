@@ -1,14 +1,15 @@
 - if @products.count > 0
-  - @products.in_groups_of(3, false).each do |group|
-    div.row
-      - group.each do |product|
-        div.col-sm-4
-          = image_tag product.image_name
-          p
-            = product.name
-            br
-            => link_to 'Details', product_path(product)
-            |  |
-            =< link_to 'Add to Cart', add_to_cart_path(product.id), method: :post
+  div#product_list
+    - @products.in_groups_of(3, false).each do |group|
+      div.row
+        - group.each do |product|
+          div.col-sm-4
+            = image_tag product.image_name
+            p
+              = product.name
+              br
+              => link_to 'Details', product_path(product)
+              |  |
+              =< link_to 'Add to Cart', add_to_cart_path(product.id), method: :post
 - else
   h2 No Products Found

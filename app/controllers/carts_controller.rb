@@ -1,27 +1,23 @@
 class CartsController < ApplicationController
   def show
-    if session[:cart_id]
-      @current_cart = Cart.find(session[:cart_id]).cart_items
-    end
+    return if session[:cart_id].nil?
+
+    @current_cart = Cart.find(session[:cart_id]).cart_items
   end
 
   def add_to_cart
     @current_cart = current_cart
 
-    product = Product.find(params[:product_id])
-
     item = @current_cart.cart_items.find_by(product_id: params[:product_id])
 
     if item
-      item.quantity = item.quantity + 1
-      item.save
+      item.update_attributes(quantity: item.quantity + 1)
     else
-      cart_item = @current_cart.cart_items.build(product_id: params[:product_id],
-                                                 quantity: 1)
-      cart_item.save
+      @current_cart.cart_items.build(product_id: params[:product_id],
+                                     quantity: 1).save
     end
 
-    redirect_to request.env["HTTP_REFERER"]
+    return_page
   end
 
   def delete_from_cart
@@ -31,17 +27,18 @@ class CartsController < ApplicationController
   end
 
   def update_cart_item
-    current_cart_item = CartItem.where(product_id: params[:product_id], cart_id: session[:cart_id]).first
+    current_cart_item = CartItem.where(product_id: params[:product_id],
+                                       cart_id: session[:cart_id]).first
 
-    current_cart_item.update_columns(quantity: params[:quantity])
+    current_cart_item.update_attributes(quantity: params[:quantity])
 
-    redirect_to request.env["HTTP_REFERER"]
+    redirect_back fallback_location: root_path
   end
 
   def preview_order
     if current_user
       @customer_info = current_user.customer
-      @tax = getTax @customer_info.region
+      @tax = get_tax @customer_info.region
       session[:customer] = @customer_info.id
     end
 
@@ -49,18 +46,22 @@ class CartsController < ApplicationController
   end
 
   private
+
   def current_cart
     @current_cart = Cart.find(session[:cart_id])
-
   rescue ActiveRecord::RecordNotFound
-    if current_user
-      @current_cart = Cart.create(user_id: current_user.id, ordered: 0)
-    else
-      @current_cart = Cart.create(user_id: nil, ordered: 0)
-    end
+    @current_cart = if current_user
+                      Cart.create(user_id: current_user.id, ordered: 0)
+                    else
+                      Cart.create(user_id: nil, ordered: 0)
+                    end
 
     session[:cart_id] = @current_cart.id
 
     @current_cart
+  end
+
+  def return_page
+    redirect_back fallback_location: root_path
   end
 end

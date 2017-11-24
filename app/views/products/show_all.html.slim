@@ -3,4 +3,5 @@ h1 Products
 
 = render 'showProducts', collection: @products || 'No products'
 
+= page_entries_info @collection
 = will_paginate @collection, class: 'pagination', renderer: BootstrapPagination::Rails

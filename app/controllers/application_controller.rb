@@ -1,31 +1,25 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def getTax region
+  def get_tax(r)
     tax = 0.0
 
-    if region.gst
-      tax += region.gst
-    end
+    tax += r.gst if r.gst
 
-    if region.pst
-      tax += region.pst
-    end
+    tax += r.pst if r.pst
 
-    if region.hst
-      tax += region.hst
-    end
+    tax += r.hst if r.hst
 
     (tax / 100)
   end
 
   protected
-  def after_sign_in_path_for(resource)
-    cart_session = Cart.where(["user_id = ? AND ordered = 0", current_user.id]).last
 
-    if cart_session != nil
-      session[:cart_id] = cart_session.id
-    end
+  def after_sign_in_path_for(*)
+    cart_session = Cart.where(['user_id = ? AND ordered = 0', current_user.id]).last
+    flash.delete(:notice)
+
+    session[:cart_id] = cart_session.id unless cart_session.nil?
 
     root_path
   end
