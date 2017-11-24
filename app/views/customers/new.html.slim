@@ -1,0 +1,22 @@
+h1 Customer Information
+
+= session[:new_user]
+
+= form_tag({controller: 'customers', action: 'new'}, method: 'post', id: 'customer_info', remote: true)
+  p
+    => label_tag 'full_name', 'Full Name: '
+    =< text_field_tag 'full_name', nil, :required => true
+
+  p
+    => label_tag 'address', 'Address: '
+    =< text_field_tag 'address', nil, :reuqired => true
+
+  p
+    => label_tag 'city', 'City: '
+    =< text_field_tag 'city', nil, :required => true
+
+  p
+    => label_tag 'region', 'Region: '
+    =< collection_select(:region, :region_id, Region.all, :id, :name, prompt: true)
+  p
+    = submit_tag 'Save Information', :id => 'save_customer'

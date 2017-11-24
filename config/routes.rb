@@ -22,9 +22,12 @@ Rails.application.routes.draw do
 
   match '/cart/checkout', to: 'customers#customer_info', via: 'post'
 
+  get '/user/customer_info', to: 'customers#new', as: 'new_customer'
+  match '/user/customer_info', to: 'customers#new', via: 'post'
+
   resources :charges, only: [:new, :create]
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

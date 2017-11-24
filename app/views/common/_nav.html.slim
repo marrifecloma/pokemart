@@ -21,21 +21,43 @@ nav.navbar.navbar-default.navbar-fixed-top.collaspe.navbar-collapse
                     = link_to category.name, category_products_path(category.name)
 
       ul.nav.navbar-nav.navbar-right
-        li
-          = link_to show_cart_path, class: 'shopping-cart'
-            span.glyphicon.glyphicon-shopping-cart
-            'Cart (
-            - if session[:cart_id]
-              = Cart.find(session[:cart_id]).cart_items.sum(:quantity)
-            - else
-              | 0
-            ')
-            show_cart_path
+        - if current_user
           li
-            a href='#'
+            span.navbar-text
               span.glyphicon.glyphicon-user
-              'Sign Up
+              | Welcome
+              =< current_user.customer.full_name
           li
-            a href='#'
+            = link_to show_cart_path, class: 'shopping-cart'
+              span.glyphicon.glyphicon-shopping-cart
+              'Cart (
+              - if session[:cart_id]
+                = Cart.find(session[:cart_id]).cart_items.sum(:quantity)
+              - else
+                | 0
+              ')
+              show_cart_path
+          li
+            = link_to destroy_user_session_path, method: :delete
+              span.glyphicon.glyphicon-log-out
+              | Log Out
+        - else
+
+          li
+            = link_to show_cart_path, class: 'shopping-cart'
+              span.glyphicon.glyphicon-shopping-cart
+              'Cart (
+              - if session[:cart_id]
+                = Cart.find(session[:cart_id]).cart_items.sum(:quantity)
+              - else
+                | 0
+              ')
+              show_cart_path
+          li
+            = link_to new_user_registration_path
+              span.glyphicon.glyphicon-user
+              | Sign Up
+          li
+            = link_to new_user_session_path
               span.glyphicon.glyphicon-log-in
-              'Log In
+              | Log In
