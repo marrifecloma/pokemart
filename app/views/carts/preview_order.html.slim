@@ -2,23 +2,36 @@ h1 Checkout
 
 h2 Customer Information
 div.customer_info
-  = form_tag({controller: 'customers', action: 'customer_info'}, method: 'post', id: 'customer_info', remote: true)
-    p
-      => label_tag 'full_name', 'Full Name: '
-      =< text_field_tag 'full_name', nil, :required => true
+  - if current_user
+    div#customer_address
+      b
+        = @customer_info.full_name
+      br
+      = @customer_info.address
+      br
+      = @customer_info.city
+      | ,
+      =< @customer_info.region.name
+  - else
+    = form_tag({controller: 'customers', action: 'customer_info'}, method: 'post', id: 'customer_info', remote: true)
+      p
+        => label_tag 'full_name', 'Full Name: '
+        =< text_field_tag 'full_name', nil, :required => true
 
-    p
-      => label_tag 'address', 'Address: '
-      =< text_field_tag 'address'
+      p
+        => label_tag 'address', 'Address: '
+        =< text_field_tag 'address'
 
-    p
-      => label_tag 'city', 'City: '
-      =< text_field_tag 'city'
+      p
+        => label_tag 'city', 'City: '
+        =< text_field_tag 'city'
 
-    p
-      => label_tag 'region', 'Region: '
-      =< collection_select(:region, :region_id, Region.all, :id, :name, prompt: true)
-    p
-      = submit_tag 'Save & Continue', :id => 'save_customer'
+      p
+        => label_tag 'region', 'Region: '
+        =< collection_select(:region, :region_id, Region.all, :id, :name, prompt: true)
+      p
+        = submit_tag 'Save & Continue', :id => 'save_customer'
 
 div.payment
+  - if current_user
+    = render "customers/order_summary", customer: @customer_info, cart: @current_cart.cart_items, tax: @tax

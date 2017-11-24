@@ -7,8 +7,8 @@
           p
             = product.name
             br
-            = link_to 'Details', product_path(product)
+            => link_to 'Details', product_path(product)
             |  |
-            = link_to 'Add to Cart', add_to_cart_path(product.id), method: :post
+            =< link_to 'Add to Cart', add_to_cart_path(product.id), method: :post
 - else
   h2 No Products Found

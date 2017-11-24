@@ -30,6 +30,10 @@ class ChargesController < ApplicationController
       product.save
     end
 
+    cart = Cart.find(session[:cart_id])
+    cart.ordered = 1
+    cart.save
+
     session.delete(:cart_id)
     session.delete(:amount)
     session.delete(:customer)

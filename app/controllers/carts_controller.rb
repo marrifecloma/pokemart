@@ -39,14 +39,26 @@ class CartsController < ApplicationController
   end
 
   def preview_order
+    if current_user
+      @customer_info = current_user.customer
+      @tax = getTax @customer_info.region
+      session[:customer] = @customer_info.id
+    end
+
     @current_cart = Cart.find(session[:cart_id])
   end
 
   private
   def current_cart
     @current_cart = Cart.find(session[:cart_id])
+
   rescue ActiveRecord::RecordNotFound
-    @current_cart = Cart.create
+    if current_user
+      @current_cart = Cart.create(user_id: current_user.id, ordered: 0)
+    else
+      @current_cart = Cart.create(user_id: nil, ordered: 0)
+    end
+
     session[:cart_id] = @current_cart.id
 
     @current_cart

@@ -16,6 +16,8 @@ div.productInfo
   h4 Category:
   = @product.category.name
   br
-  h4 Add to Cart
+  h4
+    = link_to 'Add to Cart', add_to_cart_path(@product.id), method: :post
 
-= link_to 'Back', show_all_path
+h4
+  = link_to 'Back', request.headers["HTTP_REFERER"]
