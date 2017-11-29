@@ -1,7 +1,5 @@
 h1 Customer Information
 
-= session[:new_user]
-
 = form_tag({controller: 'customers', action: 'new'}, method: 'post', id: 'customer_info', remote: true)
   p
     => label_tag 'full_name', 'Full Name: '

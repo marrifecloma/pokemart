@@ -24,9 +24,10 @@ nav.navbar.navbar-default.navbar-fixed-top.collaspe.navbar-collapse
         - if current_user
           li
             span.navbar-text
-              span.glyphicon.glyphicon-user
-              | Welcome
-              =< current_user.customer.full_name
+              - if current_user.customer
+                span.glyphicon.glyphicon-user
+                | Welcome
+                =< current_user.customer.full_name
           li
             = link_to show_cart_path, class: 'shopping-cart'
               span.glyphicon.glyphicon-shopping-cart

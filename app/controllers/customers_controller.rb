@@ -13,6 +13,8 @@ class CustomersController < ApplicationController
                                                params[:region][:region_id])
                      end
 
+    @tax = get_tax @customer_info.region
+
     customer_session
   end
 
@@ -40,6 +42,6 @@ class CustomersController < ApplicationController
 
   def direct_to_login
     session.delete(:new_user)
-    redirect_to user_session_path
+    redirect_to root_path
   end
 end

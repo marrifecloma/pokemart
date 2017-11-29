@@ -13,14 +13,19 @@ class ApplicationController < ActionController::Base
     (tax / 100)
   end
 
-  protected
-
-  def after_sign_in_path_for(*)
-    cart_session = Cart.where(['user_id = ? AND ordered = 0', current_user.id]).last
-    flash.delete(:notice)
-
-    session[:cart_id] = cart_session.id unless cart_session.nil?
-
-    root_path
-  end
+  # protected
+  #
+  # def after_sign_in_path_for(resource)
+  #   stored_location_for(resource) ||
+  #   if resource.is_a?(Admin)
+  #     admin_dashboard_path
+  #   else
+  #     cart_session = Cart.where(['user_id = ? AND ordered = 0', current_user.id]).last
+  #     flash.delete(:notice)
+  #
+  #     session[:cart_id] = cart_session.id unless cart_session.nil?
+  #
+  #     root_path
+  #   end
+  # end
 end

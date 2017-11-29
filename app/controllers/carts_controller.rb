@@ -38,7 +38,9 @@ class CartsController < ApplicationController
   def preview_order
     if current_user
       @customer_info = current_user.customer
+
       @tax = get_tax @customer_info.region
+
       session[:customer] = @customer_info.id
     end
 
